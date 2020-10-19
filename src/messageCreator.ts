@@ -1,0 +1,6 @@
+export enum UPLOAD_TYPE {
+    JS_ERROR = 'JS_ERROR',
+    REJ_ERROR = 'REJ_ERROR',
+    RESOURCE_ERROR = 'RESOURCE_ERROR',
+    HTTP_LOG = "HTTP_LOG"
+  }
