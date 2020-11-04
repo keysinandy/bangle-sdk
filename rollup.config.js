@@ -1,19 +1,23 @@
 import typescript from "rollup-plugin-typescript"
 import { terser } from 'rollup-plugin-terser';
+const fileName = process.env.NODE_ENV === 'production' ? "sdk.min" : "sdk"
 const config = {
   input: "./src/main.ts",
   output: [
     {
       name: "bangleSdk",
       format: "umd",
-      file: "lib/bundle.umd.js",
-      sourcemap: true
+      file: `dist/${fileName}.js`,
     },
     {
       name: "bangleSdk",
       format: "es",
-      file: "lib/bundle.es.js",
-      sourcemap: true
+      file: `es/${fileName}.js`,
+    },
+    {
+      name: "bangleSdk",
+      format: "cjs",
+      file: `lib/${fileName}.js`,
     }
   ],
   plugins: [
